@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Production build
+_site/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
