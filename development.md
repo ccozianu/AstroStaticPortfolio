@@ -1,23 +1,23 @@
 # Development Guide
 
-This guide explains how to add new content to the portfolio and run the development environment.
+This guide explains how to add new content to the portfolio and run the development environment using Astro.
 
 ## Project Structure
 
-- **`Bio.md`**: The source for the homepage.
-- **`_includes/base.njk`**: The main HTML template.
-- **`style.css`**: Global styles.
-- **`.eleventy.js`**: Eleventy configuration.
+- **`src/pages/index.md`**: The source for the homepage.
+- **`src/layouts/BaseLayout.astro`**: The main Astro layout.
+- **`src/styles/global.css`**: Global styles.
+- **`astro.config.mjs`**: Astro configuration (auto-generated if needed).
 
 ## Adding New Pages
 
-To add a new page, simply create a new Markdown file in the root directory.
+To add a new page, create a new Markdown or Astro file in `src/pages/`.
 
-**Example: `Projects.md`**
+**Example: `src/pages/projects.md`**
 
 ```markdown
 ---
-layout: base.njk
+layout: ../layouts/BaseLayout.astro
 title: My Projects
 heading: Projects
 tagline: Things I've built
@@ -27,31 +27,33 @@ socialLinks: []
 
 ## Project A
 Description of project A...
-
-## Project B
-Description of project B...
 ```
 
-Eleventy will automatically generate a page at `/Projects/index.html`.
+Astro will automatically generate a page at `/projects/`.
 
 ## Running the Development Server
 
-We use Docker (via WSL2) to run the development server. This ensures a consistent environment without needing Node.js installed locally.
+We use Docker (via WSL2) to run the development environment.
 
-### Command
+### First Time Setup
+
+You need to install the new dependencies (Astro):
+
+```bash
+docker run --rm -v "/mnt/c/Costin/costin3/myProjects/AstroStaticPortfolio:/app" -w /app node:lts npm install
+```
+
+### Start Server
 
 Run the following command in your terminal (WSL or PowerShell):
 
 ```bash
-wsl docker run --rm -p 32080:8080 -v "/mnt/c/Costin/costin3/myProjects/MCSP/StaticPortfolio:/app" -w /app node:lts npm start
+docker run --rm -p 32080:4321 -v "/mnt/c/Costin/costin3/myProjects/AstroStaticPortfolio:/app" -w /app node:lts npm run dev
 ```
 
-- **`-p 32080:8080`**: Maps port 8080 inside the container to port 32080 on your host.
-- **`-v ...`**: Mounts your project folder into the container.
-- **`npm start`**: Runs Eleventy in serve mode.
+- **`-p 32080:4321`**: Maps port 4321 (Astro default) inside the container to port 32080 on your host.
+- **`npm start`**: Runs `astro dev --host`.
 
 ### Accessing the Site
 
 Open your browser to: **[http://localhost:32080](http://localhost:32080)**
-
-The server supports **hot-reloading**. Changes to `.md` or `.njk` files will automatically refresh the browser.

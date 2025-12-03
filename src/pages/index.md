@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../layouts/BaseLayout.astro
 title: My Bio
 heading: Hello, World!
 tagline: Digital Explorer & Code Artisan
@@ -13,7 +13,6 @@ socialLinks:
     url: "#"
   - text: Email
     url: "#"
-permalink: index.html
 ---
 
 <section class="content-section">
