@@ -40,7 +40,7 @@ We use Docker (via WSL2) to run the development environment.
 You need to install the new dependencies (Astro):
 
 ```bash
-docker run --rm -v "/mnt/c/Costin/costin3/myProjects/AstroStaticPortfolio:/app" -w /app node:lts npm install
+docker run --rm -v "${PWD}:/app" -w /app node:lts npm install
 ```
 
 ### Start Server
@@ -48,7 +48,7 @@ docker run --rm -v "/mnt/c/Costin/costin3/myProjects/AstroStaticPortfolio:/app" 
 Run the following command in your terminal (WSL or PowerShell):
 
 ```bash
-docker run --rm -p 32080:4321 -v "/mnt/c/Costin/costin3/myProjects/AstroStaticPortfolio:/app" -w /app node:lts npm run dev
+docker run --rm -p 32080:4321 -v "${PWD}:/app" -w /app node:lts npm run dev
 ```
 
 - **`-p 32080:4321`**: Maps port 4321 (Astro default) inside the container to port 32080 on your host.

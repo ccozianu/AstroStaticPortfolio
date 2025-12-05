@@ -14,9 +14,7 @@ This is a static portfolio website built using HTML, CSS, and JavaScript. It fea
 
 - HTML5
 - CSS3
-- JavaScript
-- jQuery
-- Bootstrap
+- Astro
 
 ## Installation
 

@@ -6,9 +6,9 @@ tagline: Digital Explorer & Code Artisan
 avatarUrl: https://via.placeholder.com/150/2aa198/fdf6e3?text=ME
 socialLinks:
   - text: GitHub
-    url: "#"
-  - text: Twitter
-    url: "#"
+    url: "https://github.com/ccozianu"
+  # - text: Twitter
+  #   url: "#"
   - text: LinkedIn
     url: "#"
   - text: Email
