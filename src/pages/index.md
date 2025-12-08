@@ -3,7 +3,7 @@ layout: ../layouts/BaseLayout.astro
 title: My Bio
 heading: Hello, World!
 tagline: Digital Explorer & Code Artisan
-avatarUrl: https://via.placeholder.com/150/2aa198/fdf6e3?text=ME
+avatarUrl: /avatar.jpg
 socialLinks:
   - text: GitHub
     url: "https://github.com/ccozianu"

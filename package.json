@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "astro": "^5.0.0"
+    "astro": "^5.0.0",
+    "gh-pages": "^6.3.0"
   }
 }
