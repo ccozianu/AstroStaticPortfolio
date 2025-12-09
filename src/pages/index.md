@@ -1,8 +1,8 @@
 ---
 layout: ../layouts/BaseLayout.astro
 title: My Bio
-heading: Hello, World!
-tagline: Digital Explorer & Code Artisan
+heading: My Joy!
+tagline: Wecome to my humble digital abode
 avatarUrl: /avatar.jpg
 socialLinks:
   - text: GitHub

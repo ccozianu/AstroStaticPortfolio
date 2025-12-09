@@ -175,3 +175,93 @@ h2 {
         font-size: 3rem;
     }
 }
+
+/* Navigation Menu - Cassette Style */
+.cassette-nav {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.nav-toggle {
+    background: var(--base02);
+    color: var(--base1);
+    border: 2px solid var(--base01);
+    border-radius: 4px;
+    padding: 0.2rem 0.8rem;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 0px var(--base01);
+}
+
+.nav-toggle:hover {
+    background: var(--base01);
+    color: var(--base3);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--base01);
+}
+
+.nav-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background-color: var(--base02);
+    border: 2px solid var(--base01);
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+}
+
+.nav-content.active {
+    display: block;
+    animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nav-links a {
+    color: var(--base1);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+    display: block;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+    padding-left: 5px;
+}
+
+/* Adjust container for relative positioning context */
+.container {
+    margin-top: 2rem;
+    /* Reset margin */
+    position: relative;
+    /* Ensure absolute positioning works */
+}
