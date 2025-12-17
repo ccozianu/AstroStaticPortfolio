@@ -9,4 +9,4 @@ socialLinks: []
 
 ## Coming Soon
 
-I'm writing some interesting articles. Stay tuned!
+My thoughts, the ones worth sharing with others will end up here, sooner or later.

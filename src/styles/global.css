@@ -46,14 +46,25 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    width: 90%;
+    max-width: 1200px;
+    width: 70%;
+    min-width: 800px;
     margin: 2rem auto;
     background-color: var(--card-bg);
     padding: 3rem;
     border: 2px solid var(--border-color);
     box-shadow: 8px 8px 0px var(--base1);
     position: relative;
+}
+
+@media (max-width: 850px) {
+
+    /* 800px min-width + padding/borders might cause overflow on screens slightly larger than 800px but smaller than the combined width. 
+       Let's ensure it remains fluid when screen is too narrow for the fixed min-width. */
+    .container {
+        min-width: 0;
+        width: 95%;
+    }
 }
 
 h1,
@@ -195,44 +206,21 @@ h2 {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 2px 2px 0px var(--base01);
-}
-
-.nav-toggle:hover {
-    background: var(--base01);
-    color: var(--base3);
-    transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0px var(--base01);
-}
-
-.nav-content {
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 0.5rem;
-    background-color: var(--base02);
-    border: 2px solid var(--base01);
-    padding: 1rem;
-    border-radius: 4px;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-    min-width: 150px;
+    /* Hidden by default (desktop) */
 }
 
-.nav-content.active {
+/* Elements for Desktop (default > 768px) */
+.nav-content {
     display: block;
-    animation: slideIn 0.2s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    /* Always visible on desktop */
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    min-width: auto;
+    margin-top: 0;
 }
 
 .nav-links {
@@ -240,8 +228,9 @@ h2 {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    flex-direction: row;
+    /* Horizontal on desktop */
+    gap: 1.5rem;
 }
 
 .nav-links a {
@@ -255,7 +244,55 @@ h2 {
 
 .nav-links a:hover {
     color: var(--cyan);
-    padding-left: 5px;
+    /* padding-left: 5px; Removed for desktop to avoid jumpiness in row layout */
+    transform: translateY(-2px);
+}
+
+/* Mobile / Tablet Styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        /* Show toggle */
+    }
+
+    .nav-toggle:hover {
+        background: var(--base01);
+        color: var(--base3);
+        transform: translate(-1px, -1px);
+        box-shadow: 3px 3px 0px var(--base01);
+    }
+
+    .nav-content {
+        display: none;
+        /* Hidden by default on mobile */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+        background-color: var(--base02);
+        border: 2px solid var(--base01);
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        min-width: 150px;
+    }
+
+    .nav-content.active {
+        display: block;
+        animation: slideIn 0.2s ease-out;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        /* Vertical stack */
+        gap: 0.8rem;
+    }
+
+    .nav-links a:hover {
+        padding-left: 5px;
+        /* Restore padding hover effect for mobile list */
+        transform: none;
+    }
 }
 
 /* Adjust container for relative positioning context */

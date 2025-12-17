@@ -1,8 +1,8 @@
 ---
 layout: ../layouts/BaseLayout.astro
 title: My Bio
-heading: My Joy!
-tagline: Wecome to my humble digital abode
+heading: Welcome, stranger !
+tagline: ... to my digital shack
 avatarUrl: /avatar.jpg
 socialLinks:
   - text: GitHub
@@ -10,7 +10,7 @@ socialLinks:
   # - text: Twitter
   #   url: "#"
   - text: LinkedIn
-    url: "#"
+    url: "https://www.linkedin.com/in/costin-cozianu-0a36a95/"
   - text: Email
     url: "#"
 ---
@@ -18,10 +18,14 @@ socialLinks:
 <section class="content-section">
     <h2>About Me</h2>
     <p>
-        Welcome to my digital garden. I'm a passionate developer who loves turning coffee into code. 
-        When I'm not debugging, you can find me exploring the retro web, reading sci-fi, or tinkering with new tech.
+        Cheers, mate ! I'm Costin Cozianu, a former professional chess player, who retired from professional chess at the ripe age of 17 in order to pickup the arduous path of acting as a "humble programmer".
     </p>
     <p>
-        I believe in clean code, open source, and the power of the web to connect people.
+        To profit the most from your time here, or at least to avoid wasting it, let me give you the TLDR:
+        * you can read more about me <a href="/about">here</a>
+        * what I'm  <a href="/projects">working on</a>
+        * have some fun and <a href="/funandgames">games</a>
+        * musings and thoughts in my  <a href="/blog">blog</a>
+        * if you are a recruiter trying to sell me the million-dollar job offer, there's also my <a href="/CV.pdf">Programmer's CV</a>
     </p>
 </section>
