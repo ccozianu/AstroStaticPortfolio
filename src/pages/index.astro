@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "My Bio";
+const heading = "Welcome, stranger !";
+const tagline = "... to my digital shack";
+const avatarUrl = "/avatar.jpg";
+const socialLinks = [
+    { text: "GitHub", url: "https://github.com/ccozianu" },
+    {
+        text: "LinkedIn",
+        url: "https://www.linkedin.com/in/costin-cozianu-0a36a95/",
+    },
+    { text: "Email", url: "#" },
+];
+---
+
+<BaseLayout
+    title={pageTitle}
+    heading={heading}
+    tagline={tagline}
+    avatarUrl={avatarUrl}
+    socialLinks={socialLinks}
+>
+    <section class="content-section">
+        <h2>About Me</h2>
+        <p>
+            Cheers, mate ! I'm Costin Cozianu, a former professional chess
+            player, who retired from professional chess at the ripe age of 17 in
+            order to pickup the arduous path of acting as a "humble programmer".
+        </p>
+        <p>
+            To profit the most from your time here, or at least to avoid wasting
+            it, let me give you the TLDR:
+
+            <ul>
+                <li>you can read more about me <a href="/about">here</a></li>
+                <li>what I'm <a href="/projects">working on</a></li>
+                <li>have some fun and <a href="/funandgames">games</a></li>
+                <li>musings and thoughts in my <a href="/blog">blog</a></li>
+                <li>
+                    if you are a recruiter trying to sell me the million-dollar
+                    job offer, there's also my <a href="/CV.pdf"
+                        >Programmer's CV</a>
+                </li>
+            </ul>
+        </p>
+    </section>
+</BaseLayout>
